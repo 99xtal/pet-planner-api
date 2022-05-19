@@ -7,7 +7,7 @@ class Medicine(models.Model):
     pet_category = models.ForeignKey(PetCategory, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.name} ({self.pet_category__category})"
+        return f"{self.name} ({self.pet_category})"
 
 class Medication(models.Model):
     UNIT_CHOICES = [
