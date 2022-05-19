@@ -4,8 +4,8 @@ from .models import Pet, PetCategory, Species, Breed
 class PetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pet
-        fields = ['id', 'user', 'name', 'category', 'breed', 'birthday', 'gender', 'weight']
-        depth = 1
+        fields = '__all__'
+        depth = 2
 
 class BreedSerializer(serializers.ModelSerializer):
     class Meta:

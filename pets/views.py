@@ -4,7 +4,6 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .serializers import PetSerializer, BreedSerializer
 from .models import Pet, Breed
-from pets import serializers
 
 class UserPetList(APIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -41,6 +40,7 @@ class PetDetail(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class BreedList(APIView):
+    permission_classes = [permissions.IsAuthenticated]
     def get(self, request):
         queryset = Breed.objects.all()
         category = request.query_params.get('category')
