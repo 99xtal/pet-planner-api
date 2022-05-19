@@ -34,7 +34,7 @@ class Pet(models.Model):
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE, default=None)
     birthday = models.DateField()
     gender = models.CharField(max_length=1, choices= GENDER_CHOICES);
-    weight = models.IntegerField()
+    weight = models.IntegerField(default=None)
 
     def __str__(self):
         return f"{self.name} ({self.category})"
