@@ -1,5 +1,5 @@
 """
-WSGI config for drf_jwt_backend project.
+WSGI config for pet_planner_project project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -12,6 +12,6 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE',
-                      'drf_jwt_backend.settings')
+                      'pet_planner_project.settings')
 
 application = get_wsgi_application()
