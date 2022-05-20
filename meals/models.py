@@ -1,5 +1,5 @@
 from django.db import models
-from pets.models import PetCategory
+from pets.models import PetCategory, Pet
 
 # Create your models here.
 class Food(models.Model):
@@ -20,6 +20,7 @@ class Meal(models.Model):
     amount= models.DecimalField(max_digits=10, decimal_places=2)
     amount_units = models.CharField(max_length=10, choices=UNIT_CHOICES)
     time = models.TimeField()
+    pet = models.ForeignKey(Pet, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         return f"{self.amount} {self.amount_units} {self.food}, {self.time}"

@@ -14,12 +14,14 @@ class UserEventList(APIView):
     def get(self, request):
         user = self.request.user
         category = request.query_params.get('category')
-        petId = request.query_params.get('petId')
+        pet_id = request.query_params.get('petId')
 
-        if category or petId:
-            queryset = Event.objects.filter(user=user, event_category = category, pet = petId)
-        else:
-            queryset = Event.objects.filter(user=user)
+        queryset = Event.objects.filter(user=user)
+        if category:
+            queryset = queryset.filter(event_category__title = category)
+        if pet_id:
+            queryset = queryset.filter(pet_id = pet_id)
+
         
         serializer = EventSerializer(queryset, many=True)
         return Response(serializer.data)

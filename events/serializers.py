@@ -7,6 +7,10 @@ class EventSerializer(serializers.ModelSerializer):
         fields = '__all__'
         depth = 1
 
+    event_category_id = serializers.IntegerField(write_only=True)
+    user_id = serializers.IntegerField(write_only=True)
+    pet_id = serializers.IntegerField(write_only=True)
+
 class EventCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = EventCategory

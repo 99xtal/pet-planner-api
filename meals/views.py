@@ -8,9 +8,9 @@ from .models import Food, Meal
 class MealList(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def get(self, request):
-        category = request.query_params.get('category')
-        if category:
-            queryset = Meal.objects.filter(food__pet_category__category = category)
+        pet_id = request.query_params.get('petId')
+        if pet_id:
+            queryset = Meal.objects.filter(pet_id = pet_id)
         else:
             queryset = Meal.objects.all()
         serializer = MealSerializer(queryset, many=True)

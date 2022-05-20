@@ -13,3 +13,10 @@ class Widget(models.Model):
     type = models.CharField(max_length=32, choices=WIDGET_CHOICES)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     pet = models.ForeignKey(Pet, on_delete=models.CASCADE, default=None, blank=True, null=True)
+
+    def __str__(self):
+        if self.pet:
+            str = f"{self.pet}'s {self.type} ({self.user})"
+        else:
+            str = f"{self.type} ({self.user})"
+        return str

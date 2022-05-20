@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Pet, PetCategory, Species, Breed
+from .models import Pet, Breed
 
 class PetSerializer(serializers.ModelSerializer):
     class Meta:

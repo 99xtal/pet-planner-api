@@ -4,10 +4,23 @@ from rest_framework.response import Response
 from .serializers import MedicineSerializer, MedicationSerializer
 from .models import Medicine, Medication
 
-class MedicationList(generics.ListCreateAPIView):
+class MedicationList(APIView):
     permission_classes = [permissions.IsAuthenticated]
-    queryset = Medication.objects.all()
-    serializer_class = MedicationSerializer
+
+    def get(self, request):
+        pet_id = request.query_params.get('petId')
+        if pet_id:
+            queryset = Medication.objects.filter(pet_id = pet_id)
+        else:
+            queryset = Medication.objects.all()
+        serializer = MedicationSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = MedicationSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class MedicationDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]

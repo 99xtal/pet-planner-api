@@ -35,7 +35,6 @@ class Pet(models.Model):
     birthday = models.DateField()
     gender = models.CharField(max_length=1, choices= GENDER_CHOICES);
     weight = models.IntegerField(default=None)
-    meals = models.ManyToManyField("meals.Meal")
 
     def __str__(self):
         return f"{self.name} ({self.category})"
