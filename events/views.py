@@ -1,6 +1,4 @@
-from rest_framework import status, permissions, generics
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework import permissions, generics
 from .serializers import EventSerializer, EventCategorySerializer
 from .models import Event, EventCategory
 
@@ -8,29 +6,21 @@ class EventCategoryList(generics.ListAPIView):
     queryset = EventCategory.objects.all()
     serializer_class = EventCategorySerializer
 
-class UserEventList(APIView):
+class UserEventList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
+    serializer_class = EventSerializer
 
-    def get(self, request):
+    def get_queryset(self):
         user = self.request.user
-        category = request.query_params.get('category')
-        pet_id = request.query_params.get('petId')
+        category = self.request.query_params.get('category')
+        pet_id = self.request.query_params.get('petId')
 
         queryset = Event.objects.filter(user=user)
         if category:
             queryset = queryset.filter(event_category__title = category)
         if pet_id:
             queryset = queryset.filter(pet_id = pet_id)
-
-        
-        serializer = EventSerializer(queryset, many=True)
-        return Response(serializer.data)
-
-    def post(self, request):
-        serializer = EventSerializer(data = request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return queryset
 
 class EventDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]

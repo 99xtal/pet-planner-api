@@ -1,23 +1,14 @@
-from django.shortcuts import get_object_or_404
-from rest_framework import status, permissions, generics
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework import permissions, generics
 from .serializers import WidgetSerializer
 from .models import Widget
 
-class UserWidgetList(APIView):
+class UserWidgetList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
-    def get(self, request):
-        user = self.request.user
-        queryset = Widget.objects.filter(user=user)
-        serializer = WidgetSerializer(queryset, many=True)
-        return Response(serializer.data)
+    serializer_class = WidgetSerializer
 
-    def post(self, request):
-        serializer = WidgetSerializer(data = request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    def get_queryset(self):
+        user = self.request.user
+        return Widget.objects.filter(user=user)
 
 class WidgetDetail(generics.DestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
