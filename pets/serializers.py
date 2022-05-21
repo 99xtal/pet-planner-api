@@ -7,6 +7,10 @@ class PetSerializer(serializers.ModelSerializer):
         fields = '__all__'
         depth = 2
 
+    user_id = serializers.IntegerField(write_only=True)
+    category_id = serializers.IntegerField(write_only=True)
+    breed_id = serializers.IntegerField(write_only=True)
+
 class BreedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Breed
