@@ -10,12 +10,9 @@ class Medicine(models.Model):
     def __str__(self):
         return f"{self.name} ({self.pet_category})"
 
+
 class Medication(models.Model):
-    UNIT_CHOICES = [
-        ('pills','pills'),
-        ('ccs', 'ccs'),
-        ('drops', 'drops')
-    ]
+    UNIT_CHOICES = [("pills", "pills"), ("ccs", "ccs"), ("drops", "drops")]
     medicine = models.ForeignKey(Medicine, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     amount_units = models.CharField(max_length=10, choices=UNIT_CHOICES)
@@ -24,4 +21,3 @@ class Medication(models.Model):
 
     def __str__(self):
         return f"{self.amount} {self.amount_units} {self.medicine}, {self.time}"
-    

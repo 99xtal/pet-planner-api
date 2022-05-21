@@ -2,22 +2,25 @@ from rest_framework import permissions, generics
 from .serializers import FoodSerializer, MealSerializer
 from .models import Food, Meal
 
+
 class MealList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = MealSerializer
 
     def get_queryset(self):
         queryset = Meal.objects.all()
-        pet_id = self.request.query_params.get('petId')
+        pet_id = self.request.query_params.get("petId")
 
         if pet_id:
-            queryset = queryset.filter(pet_id = pet_id)
+            queryset = queryset.filter(pet_id=pet_id)
         return queryset
+
 
 class MealDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]
     queryset = Meal.objects.all()
     serializer_class = MealSerializer
+
 
 class FoodList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticated]
@@ -25,11 +28,12 @@ class FoodList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         queryset = Food.objects.all()
-        category = self.request.query_params.get('category')
+        category = self.request.query_params.get("category")
 
         if category:
-            queryset = queryset.filter(pet_category__category = category)
+            queryset = queryset.filter(pet_category__category=category)
         return queryset
+
 
 class FoodDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticated]

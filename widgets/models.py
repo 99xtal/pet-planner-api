@@ -5,14 +5,16 @@ from authentication.models import User
 # Create your models here.
 class Widget(models.Model):
     WIDGET_CHOICES = [
-        ('timeline', 'timeline'),
-        ('bio','bio'),
-        ('diet','diet'),
-        ('medications', 'medications')
+        ("timeline", "timeline"),
+        ("bio", "bio"),
+        ("diet", "diet"),
+        ("medications", "medications"),
     ]
     type = models.CharField(max_length=32, choices=WIDGET_CHOICES)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    pet = models.ForeignKey(Pet, on_delete=models.CASCADE, default=None, blank=True, null=True)
+    pet = models.ForeignKey(
+        Pet, on_delete=models.CASCADE, default=None, blank=True, null=True
+    )
 
     def __str__(self):
         if self.pet:

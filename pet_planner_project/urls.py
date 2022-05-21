@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/auth/', include('authentication.urls')),
-    path('api/cars/', include('cars.urls')),
-    path('api/pets/', include('pets.urls')),
-    path('api/meals/', include('meals.urls')),
-    path('api/medications/', include('medications.urls')),
-    path('api/events/', include('events.urls')),
-    path('api/widgets/', include('widgets.urls')),
+    path("admin/", admin.site.urls),
+    path("api/auth/", include("authentication.urls")),
+    path("api/cars/", include("cars.urls")),
+    path("api/pets/", include("pets.urls")),
+    path("api/meals/", include("meals.urls")),
+    path("api/medications/", include("medications.urls")),
+    path("api/events/", include("events.urls")),
+    path("api/widgets/", include("widgets.urls")),
 ]

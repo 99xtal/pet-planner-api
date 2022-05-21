@@ -10,18 +10,52 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('pets', '0001_initial'),
+        ("pets", "0001_initial"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Widget',
+            name="Widget",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type', models.CharField(choices=[('timeline', 'timeline'), ('bio', 'bio'), ('diet', 'diet'), ('medications', 'medications')], max_length=32)),
-                ('pet', models.ForeignKey(blank=True, default=None, null=True, on_delete=django.db.models.deletion.CASCADE, to='pets.pet')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "type",
+                    models.CharField(
+                        choices=[
+                            ("timeline", "timeline"),
+                            ("bio", "bio"),
+                            ("diet", "diet"),
+                            ("medications", "medications"),
+                        ],
+                        max_length=32,
+                    ),
+                ),
+                (
+                    "pet",
+                    models.ForeignKey(
+                        blank=True,
+                        default=None,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="pets.pet",
+                    ),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]

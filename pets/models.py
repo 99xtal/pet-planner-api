@@ -8,11 +8,13 @@ class PetCategory(models.Model):
     def __str__(self):
         return f"{self.category}"
 
+
 class Species(models.Model):
     binomial_name = models.CharField(max_length=100)
 
     def __str__(self):
         return f"{self.binomial_name}"
+
 
 class Breed(models.Model):
     category = models.ForeignKey(PetCategory, on_delete=models.CASCADE)
@@ -22,18 +24,15 @@ class Breed(models.Model):
     def __str__(self):
         return f"{self.name} ({self.category})"
 
+
 class Pet(models.Model):
-    GENDER_CHOICES = [
-        ('M', 'Male'),
-        ('F', 'Female'),
-        ('U', 'Unknown')
-    ]
+    GENDER_CHOICES = [("M", "Male"), ("F", "Female"), ("U", "Unknown")]
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     category = models.ForeignKey(PetCategory, on_delete=models.CASCADE)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE, default=None)
     birthday = models.DateField()
-    gender = models.CharField(max_length=1, choices= GENDER_CHOICES);
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     weight = models.IntegerField(default=None)
 
     def __str__(self):

@@ -9,15 +9,16 @@ class Food(models.Model):
     def __str__(self):
         return self.name
 
+
 class Meal(models.Model):
     UNIT_CHOICES = [
-        ('g', 'grams'),
-        ('kg', 'kilograms'),
-        ('cups', 'cups'),
-        ('whole', 'whole')
+        ("g", "grams"),
+        ("kg", "kilograms"),
+        ("cups", "cups"),
+        ("whole", "whole"),
     ]
-    food = models.ForeignKey(Food, on_delete= models.CASCADE)
-    amount= models.DecimalField(max_digits=10, decimal_places=2)
+    food = models.ForeignKey(Food, on_delete=models.CASCADE)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
     amount_units = models.CharField(max_length=10, choices=UNIT_CHOICES)
     time = models.TimeField()
     pet = models.ForeignKey(Pet, on_delete=models.CASCADE, default=None)

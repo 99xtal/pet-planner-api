@@ -9,26 +9,64 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('pets', '0001_initial'),
+        ("pets", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Medicine',
+            name="Medicine",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=64)),
-                ('pet_category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pets.petcategory')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=64)),
+                (
+                    "pet_category",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="pets.petcategory",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Medication',
+            name="Medication",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('amount', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('amount_units', models.CharField(choices=[('pills', 'pills'), ('ccs', 'ccs'), ('drops', 'drops')], max_length=10)),
-                ('time', models.TimeField()),
-                ('medicine', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='medications.medicine')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("amount", models.DecimalField(decimal_places=2, max_digits=10)),
+                (
+                    "amount_units",
+                    models.CharField(
+                        choices=[
+                            ("pills", "pills"),
+                            ("ccs", "ccs"),
+                            ("drops", "drops"),
+                        ],
+                        max_length=10,
+                    ),
+                ),
+                ("time", models.TimeField()),
+                (
+                    "medicine",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="medications.medicine",
+                    ),
+                ),
             ],
         ),
     ]
