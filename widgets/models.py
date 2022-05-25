@@ -8,7 +8,7 @@ class Widget(models.Model):
         ("timeline", "timeline"),
         ("bio", "bio"),
         ("diet", "diet"),
-        ("medications", "medications"),
+        ("health", "health"),
     ]
     type = models.CharField(max_length=32, choices=WIDGET_CHOICES)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

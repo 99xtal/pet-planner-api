@@ -28,10 +28,10 @@ class FoodList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         queryset = Food.objects.all()
-        category = self.request.query_params.get("category")
+        categoryId = self.request.query_params.get("categoryId")
 
-        if category:
-            queryset = queryset.filter(pet_category__category=category)
+        if categoryId:
+            queryset = queryset.filter(pet_category__id=categoryId)
         return queryset
 
 
