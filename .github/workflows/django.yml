@@ -31,6 +31,11 @@ jobs:
       uses: VaultVulp/action-pipenv@v2.0.1
       env:
         DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+        DB_NAME: ''
+        DB_USER: ''
+        DB_PASSWORD: ''
+        DB_HOST: ''
+        DB_PORT: 3306
       with:
         command: run test # Run custom `test` command defined in the `[scripts]` block of Pipfile
       
