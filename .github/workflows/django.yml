@@ -2,71 +2,77 @@ name: Django CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Set up Python (3.11)
-      uses: actions/setup-python@v3
-      with:
-        python-version: 3.11
-        
-    - name: Install dependecies
-      uses: VaultVulp/action-pipenv@v2.0.1
-      with:
-        command: install -d # Install all dependencies, including development ones
-        
-    - name: Run Tests
-      uses: VaultVulp/action-pipenv@v2.0.1
-      env:
-        DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
-        DB_NAME: ''
-        DB_USER: ''
-        DB_PASSWORD: ''
-        DB_HOST: ''
-        DB_PORT: 3306
-      with:
-        command: run test # Run custom `test` command defined in the `[scripts]` block of Pipfile
-        
-    - name: Docker Login
-      uses: docker/login-action@v2.1.0
-      with:
-        # Username used to log against the Docker registry
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        # Password or personal access token used to log against the Docker registry
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        
-    - name: Build container image
-      run: docker build -t petpal/demo-api .
-      
-    - name: Tag image
-      run: docker tag petpal/demo-api undeadoutlook/petpal-demo-api:latest
-        
-    - name: Push to DockerHub
-      run: docker push undeadoutlook/petpal-demo-api:latest
-      
+      - uses: actions/checkout@v3
+
+      - name: Set up Python (3.11)
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.11
+
+      - name: Install dependecies
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          command: install -d # Install all dependencies, including development ones
+
+      - name: Run Tests
+        uses: VaultVulp/action-pipenv@v2.0.1
+        env:
+          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+          DB_NAME: ''
+          DB_USER: ''
+          DB_PASSWORD: ''
+          DB_HOST: ''
+          DB_PORT: 3306
+        with:
+          command: run test # Run custom `test` command defined in the `[scripts]` block of Pipfile
+
+      - name: Docker Login
+        uses: docker/login-action@v2.1.0
+        with:
+          # Username used to log against the Docker registry
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          # Password or personal access token used to log against the Docker registry
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build container images
+        run: |
+          docker build -t petpal/demo-api ./api
+          docker build -t petpal/demo-nginx ./nginx
+
+      - name: Tag images
+        run: |
+          docker tag petpal/demo-api undeadoutlook/petpal-demo-api:latest
+          docker tag petpal/demo-nginx undeadoutlook/petpal-demo-nginx:latest
+
+      - name: Push to DockerHub
+        run: |
+          docker push undeadoutlook/petpal-demo-api:latest
+          docker push undeadoutlook/petpal-demo-nginx:latest
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Compress source code
         run: zip -r api_demo_source_code.zip ./
-        
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-          
+
       - name: Upload to S3 bucket
         run: aws s3 cp api_demo_source_code.zip s3://demo-petpal-api-source-code
