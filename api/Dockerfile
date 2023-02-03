@@ -12,5 +12,5 @@ RUN pipenv install --system --deploy
 
 COPY . .
 
-ENTRYPOINT [ "python3" ]
-CMD ["manage.py", "runserver", "0.0.0.0:8000"] 
+ENTRYPOINT [ "gunicorn" ]
+CMD ["-b", "0.0.0.0:8000", "pet_planner_project.wsgi:application"] 
