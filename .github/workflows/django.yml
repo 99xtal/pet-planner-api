@@ -47,7 +47,7 @@ jobs:
       run: docker build -t petpal/demo-api .
       
     - name: Tag image
-        docker tag petpal/demo-api undeadoutlook/petpal-demo-api:latest
+      run: docker tag petpal/demo-api undeadoutlook/petpal-demo-api:latest
         
     - name: Push to DockerHub
       run: docker push undeadoutlook/petpal-demo-api:latest
