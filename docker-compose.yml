@@ -1,9 +1,18 @@
 services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    depends_on:
+      - api
+    container_name: nginx
   api:
     build:
       context: ./api
       dockerfile: Dockerfile
     restart: on-failure
     container_name: backend
-    ports:
-      - 8000:8000
+    expose:
+      - 8000
