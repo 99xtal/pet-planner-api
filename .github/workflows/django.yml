@@ -9,25 +9,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.11]
 
     steps:
     - uses: actions/checkout@v3
     
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python (3.11)
       uses: actions/setup-python@v3
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.11
         
     - name: Install dependecies
       uses: VaultVulp/action-pipenv@v2.0.1
       with:
         command: install -d # Install all dependencies, including development ones
         
-    - name: Test
+    - name: Run Tests
       uses: VaultVulp/action-pipenv@v2.0.1
       env:
         DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
@@ -38,6 +34,23 @@ jobs:
         DB_PORT: 3306
       with:
         command: run test # Run custom `test` command defined in the `[scripts]` block of Pipfile
+        
+    - name: Docker Login
+      uses: docker/login-action@v2.1.0
+      with:
+        # Username used to log against the Docker registry
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        # Password or personal access token used to log against the Docker registry
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        
+    - name: Build container image
+      run: docker build -t petpal/demo-api .
+      
+    - name: Tag image
+      run: docker tag petpal/demo-api undeadoutlook/petpal-demo-api:latest
+        
+    - name: Push to DockerHub
+      run: docker push undeadoutlook/petpal-demo-api:latest
       
   deploy:
     runs-on: ubuntu-latest
