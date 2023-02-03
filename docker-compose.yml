@@ -5,3 +5,5 @@ services:
       dockerfile: Dockerfile
     restart: on-failure
     container_name: backend
+    ports:
+      - 8000:8000
