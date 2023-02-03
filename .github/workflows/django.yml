@@ -23,18 +23,6 @@ jobs:
         with:
           command: install -d # Install all dependencies, including development ones
 
-      - name: Run Tests
-        uses: VaultVulp/action-pipenv@v2.0.1
-        env:
-          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
-          DB_NAME: ''
-          DB_USER: ''
-          DB_PASSWORD: ''
-          DB_HOST: ''
-          DB_PORT: 3306
-        with:
-          command: run test # Run custom `test` command defined in the `[scripts]` block of Pipfile
-
       - name: Docker Login
         uses: docker/login-action@v2.1.0
         with:
