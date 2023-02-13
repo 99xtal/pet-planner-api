@@ -11,6 +11,8 @@ mysql-connector-python = "==8.0.26"
 django-cors-headers = "*"
 mysqlclient = "*"
 gunicorn = "*"
+pyyaml = "*"
+uritemplate = "*"
 
 [dev-packages]
 autopep8 = "*"

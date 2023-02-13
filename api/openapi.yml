@@ -1,0 +1,1757 @@
+openapi: 3.0.2
+info:
+  title: 'petPal API'
+  version: '0.1.0'
+paths:
+  /api/cars/:
+    get:
+      operationId: listuser_cars
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+      tags:
+      - cars
+    post:
+      operationId: createuser_cars
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+          application/x-www-form-urlencoded:
+            schema: {}
+          multipart/form-data:
+            schema: {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - cars
+  /api/cars/all/:
+    get:
+      operationId: listget_all_cars
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+      tags:
+      - cars
+  /api/pets/:
+    get:
+      operationId: listPets
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Pet'
+          description: ''
+      tags:
+      - pets
+    post:
+      operationId: createPet
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pet'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Pet'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+          description: ''
+      tags:
+      - pets
+  /api/pets/{id}/:
+    get:
+      operationId: retrievePet
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this pet.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+          description: ''
+      tags:
+      - pets
+    put:
+      operationId: updatePet
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this pet.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pet'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Pet'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+          description: ''
+      tags:
+      - pets
+    patch:
+      operationId: partialUpdatePet
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this pet.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pet'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Pet'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+          description: ''
+      tags:
+      - pets
+    delete:
+      operationId: destroyPet
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this pet.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - pets
+  /api/pets/breeds/:
+    get:
+      operationId: listBreeds
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Breed'
+          description: ''
+      tags:
+      - breeds
+  /api/meals/:
+    get:
+      operationId: listMeals
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Meal'
+          description: ''
+      tags:
+      - meals
+    post:
+      operationId: createMeal
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Meal'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Meal'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Meal'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Meal'
+          description: ''
+      tags:
+      - meals
+  /api/meals/{id}/:
+    get:
+      operationId: retrieveMeal
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this meal.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Meal'
+          description: ''
+      tags:
+      - meals
+    put:
+      operationId: updateMeal
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this meal.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Meal'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Meal'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Meal'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Meal'
+          description: ''
+      tags:
+      - meals
+    patch:
+      operationId: partialUpdateMeal
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this meal.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Meal'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Meal'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Meal'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Meal'
+          description: ''
+      tags:
+      - meals
+    delete:
+      operationId: destroyMeal
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this meal.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - meals
+  /api/meals/foods/:
+    get:
+      operationId: listFoods
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Food'
+          description: ''
+      tags:
+      - foods
+    post:
+      operationId: createFood
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Food'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Food'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Food'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Food'
+          description: ''
+      tags:
+      - foods
+  /api/meals/foods/{id}/:
+    get:
+      operationId: retrieveFood
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this food.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Food'
+          description: ''
+      tags:
+      - foods
+    put:
+      operationId: updateFood
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this food.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Food'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Food'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Food'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Food'
+          description: ''
+      tags:
+      - foods
+    patch:
+      operationId: partialUpdateFood
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this food.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Food'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Food'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Food'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Food'
+          description: ''
+      tags:
+      - foods
+    delete:
+      operationId: destroyFood
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this food.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - foods
+  /api/medications/:
+    get:
+      operationId: listMedications
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Medication'
+          description: ''
+      tags:
+      - medications
+    post:
+      operationId: createMedication
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Medication'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Medication'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Medication'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Medication'
+          description: ''
+      tags:
+      - medications
+  /api/medications/{id}/:
+    get:
+      operationId: retrieveMedication
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this medication.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Medication'
+          description: ''
+      tags:
+      - medications
+    put:
+      operationId: updateMedication
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this medication.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Medication'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Medication'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Medication'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Medication'
+          description: ''
+      tags:
+      - medications
+    patch:
+      operationId: partialUpdateMedication
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this medication.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Medication'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Medication'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Medication'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Medication'
+          description: ''
+      tags:
+      - medications
+    delete:
+      operationId: destroyMedication
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this medication.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - medications
+  /api/medications/medicines/:
+    get:
+      operationId: listMedicines
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Medicine'
+          description: ''
+      tags:
+      - medicines
+    post:
+      operationId: createMedicine
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Medicine'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Medicine'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Medicine'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Medicine'
+          description: ''
+      tags:
+      - medicines
+  /api/medications/medicines/{id}/:
+    get:
+      operationId: retrieveMedicine
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this medicine.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Medicine'
+          description: ''
+      tags:
+      - medicines
+    put:
+      operationId: updateMedicine
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this medicine.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Medicine'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Medicine'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Medicine'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Medicine'
+          description: ''
+      tags:
+      - medicines
+    patch:
+      operationId: partialUpdateMedicine
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this medicine.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Medicine'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Medicine'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Medicine'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Medicine'
+          description: ''
+      tags:
+      - medicines
+    delete:
+      operationId: destroyMedicine
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this medicine.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - medicines
+  /api/events/:
+    get:
+      operationId: listEvents
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+          description: ''
+      tags:
+      - events
+    post:
+      operationId: createEvent
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Event'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+          description: ''
+      tags:
+      - events
+  /api/events/{id}/:
+    get:
+      operationId: retrieveEvent
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this event.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+          description: ''
+      tags:
+      - events
+    put:
+      operationId: updateEvent
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this event.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Event'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+          description: ''
+      tags:
+      - events
+    patch:
+      operationId: partialUpdateEvent
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this event.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Event'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+          description: ''
+      tags:
+      - events
+    delete:
+      operationId: destroyEvent
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this event.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - events
+  /api/events/categories/:
+    get:
+      operationId: listEventCategorys
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EventCategory'
+          description: ''
+      tags:
+      - events
+  /api/widgets/:
+    get:
+      operationId: listWidgets
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Widget'
+          description: ''
+      tags:
+      - widgets
+    post:
+      operationId: createWidget
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Widget'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Widget'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Widget'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Widget'
+          description: ''
+      tags:
+      - widgets
+  /api/auth/login/:
+    post:
+      operationId: createMyTokenObtainPair
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MyTokenObtainPair'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MyTokenObtainPair'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MyTokenObtainPair'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyTokenObtainPair'
+          description: ''
+      tags:
+      - auth
+  /api/auth/login/refresh/:
+    post:
+      operationId: createTokenRefresh
+      description: 'Takes a refresh type JSON web token and returns an access type
+        JSON web
+
+        token if the refresh token is valid.'
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenRefresh'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenRefresh'
+          description: ''
+      tags:
+      - auth
+  /api/auth/register/:
+    post:
+      operationId: createUser
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Registration'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Registration'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Registration'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Registration'
+          description: ''
+      tags:
+      - auth
+  /api/widgets/{id}/:
+    delete:
+      operationId: destroyWidget
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this widget.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - widgets
+components:
+  schemas:
+    Pet:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user_id:
+          type: integer
+          writeOnly: true
+        category_id:
+          type: integer
+          writeOnly: true
+        breed_id:
+          type: integer
+          writeOnly: true
+        name:
+          type: string
+          maxLength: 30
+        birthday:
+          type: string
+          format: date
+        gender:
+          enum:
+          - M
+          - F
+          - U
+          type: string
+        weight:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            password:
+              type: string
+              maxLength: 128
+            last_login:
+              type: string
+              format: date-time
+              nullable: true
+            is_superuser:
+              type: boolean
+              description: Designates that this user has all permissions without explicitly
+                assigning them.
+            username:
+              type: string
+              description: Required. 150 characters or fewer. Letters, digits and
+                @/./+/-/_ only.
+              pattern: ^[\w.@+-]+\z
+              maxLength: 150
+            first_name:
+              type: string
+              maxLength: 150
+            last_name:
+              type: string
+              maxLength: 150
+            email:
+              type: string
+              format: email
+              maxLength: 254
+            is_staff:
+              type: boolean
+              description: Designates whether the user can log into this admin site.
+            is_active:
+              type: boolean
+              description: Designates whether this user should be treated as active.
+                Unselect this instead of deleting accounts.
+            date_joined:
+              type: string
+              format: date-time
+            groups:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 150
+                  permissions:
+                    type: array
+                    items:
+                      type: integer
+                required:
+                - name
+              readOnly: true
+            user_permissions:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    readOnly: true
+                  name:
+                    type: string
+                    maxLength: 255
+                  codename:
+                    type: string
+                    maxLength: 100
+                  content_type:
+                    type: integer
+                required:
+                - name
+                - codename
+                - content_type
+              readOnly: true
+          required:
+          - password
+          - username
+          readOnly: true
+        category:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            category:
+              type: string
+              maxLength: 30
+          required:
+          - category
+          readOnly: true
+        breed:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 100
+            category:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  readOnly: true
+                category:
+                  type: string
+                  maxLength: 30
+              required:
+              - category
+              readOnly: true
+            species:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  readOnly: true
+                binomial_name:
+                  type: string
+                  maxLength: 100
+              required:
+              - binomial_name
+              readOnly: true
+          required:
+          - name
+          readOnly: true
+      required:
+      - user_id
+      - category_id
+      - breed_id
+      - name
+      - birthday
+      - gender
+    Breed:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 100
+        category:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            category:
+              type: string
+              maxLength: 30
+          required:
+          - category
+          readOnly: true
+        species:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            binomial_name:
+              type: string
+              maxLength: 100
+          required:
+          - binomial_name
+          readOnly: true
+      required:
+      - name
+    Meal:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        food_id:
+          type: integer
+          writeOnly: true
+        pet_id:
+          type: integer
+          writeOnly: true
+        amount:
+          type: string
+          format: decimal
+          multipleOf: 0.01
+          maximum: 100000000
+          minimum: -100000000
+        amount_units:
+          enum:
+          - g
+          - kg
+          - cups
+          - whole
+          type: string
+        time:
+          type: string
+        food:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 64
+            pet_category:
+              type: integer
+          required:
+          - name
+          - pet_category
+          readOnly: true
+        pet:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 30
+            birthday:
+              type: string
+              format: date
+            gender:
+              enum:
+              - M
+              - F
+              - U
+              type: string
+            weight:
+              type: integer
+              maximum: 2147483647
+              minimum: -2147483648
+            user:
+              type: integer
+            category:
+              type: integer
+            breed:
+              type: integer
+          required:
+          - name
+          - birthday
+          - gender
+          - user
+          - category
+          readOnly: true
+      required:
+      - food_id
+      - pet_id
+      - amount
+      - amount_units
+      - time
+    Food:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        pet_category_id:
+          type: integer
+          writeOnly: true
+        name:
+          type: string
+          maxLength: 64
+        pet_category:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            category:
+              type: string
+              maxLength: 30
+          required:
+          - category
+          readOnly: true
+      required:
+      - pet_category_id
+      - name
+    Medication:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        medicine_id:
+          type: integer
+          writeOnly: true
+        pet_id:
+          type: integer
+          writeOnly: true
+        amount:
+          type: string
+          format: decimal
+          multipleOf: 0.01
+          maximum: 100000000
+          minimum: -100000000
+        amount_units:
+          enum:
+          - pills
+          - ccs
+          - drops
+          type: string
+        time:
+          type: string
+        medicine:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 64
+            pet_category:
+              type: integer
+          required:
+          - name
+          - pet_category
+          readOnly: true
+        pet:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 30
+            birthday:
+              type: string
+              format: date
+            gender:
+              enum:
+              - M
+              - F
+              - U
+              type: string
+            weight:
+              type: integer
+              maximum: 2147483647
+              minimum: -2147483648
+            user:
+              type: integer
+            category:
+              type: integer
+            breed:
+              type: integer
+          required:
+          - name
+          - birthday
+          - gender
+          - user
+          - category
+          readOnly: true
+      required:
+      - medicine_id
+      - pet_id
+      - amount
+      - amount_units
+      - time
+    Medicine:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        pet_category_id:
+          type: integer
+          writeOnly: true
+        name:
+          type: string
+          maxLength: 64
+        pet_category:
+          type: integer
+      required:
+      - pet_category_id
+      - name
+      - pet_category
+    Event:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        event_category_id:
+          type: integer
+          writeOnly: true
+        user_id:
+          type: integer
+          writeOnly: true
+        pet_id:
+          type: integer
+          writeOnly: true
+        date:
+          type: string
+          format: date
+        time:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+        event_category:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            title:
+              type: string
+              maxLength: 64
+          required:
+          - title
+          readOnly: true
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            password:
+              type: string
+              maxLength: 128
+            last_login:
+              type: string
+              format: date-time
+              nullable: true
+            is_superuser:
+              type: boolean
+              description: Designates that this user has all permissions without explicitly
+                assigning them.
+            username:
+              type: string
+              description: Required. 150 characters or fewer. Letters, digits and
+                @/./+/-/_ only.
+              pattern: ^[\w.@+-]+\z
+              maxLength: 150
+            first_name:
+              type: string
+              maxLength: 150
+            last_name:
+              type: string
+              maxLength: 150
+            email:
+              type: string
+              format: email
+              maxLength: 254
+            is_staff:
+              type: boolean
+              description: Designates whether the user can log into this admin site.
+            is_active:
+              type: boolean
+              description: Designates whether this user should be treated as active.
+                Unselect this instead of deleting accounts.
+            date_joined:
+              type: string
+              format: date-time
+            groups:
+              type: array
+              items:
+                type: integer
+              description: The groups this user belongs to. A user will get all permissions
+                granted to each of their groups.
+            user_permissions:
+              type: array
+              items:
+                type: integer
+              description: Specific permissions for this user.
+          required:
+          - password
+          - username
+          readOnly: true
+        pet:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 30
+            birthday:
+              type: string
+              format: date
+            gender:
+              enum:
+              - M
+              - F
+              - U
+              type: string
+            weight:
+              type: integer
+              maximum: 2147483647
+              minimum: -2147483648
+            user:
+              type: integer
+            category:
+              type: integer
+            breed:
+              type: integer
+          required:
+          - name
+          - birthday
+          - gender
+          - user
+          - category
+          readOnly: true
+      required:
+      - event_category_id
+      - user_id
+      - pet_id
+      - date
+    EventCategory:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 64
+      required:
+      - title
+    Widget:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        user_id:
+          type: integer
+          writeOnly: true
+        pet_id:
+          type: integer
+          writeOnly: true
+        type:
+          enum:
+          - timeline
+          - bio
+          - diet
+          - health
+          type: string
+        user:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            password:
+              type: string
+              maxLength: 128
+            last_login:
+              type: string
+              format: date-time
+              nullable: true
+            is_superuser:
+              type: boolean
+              description: Designates that this user has all permissions without explicitly
+                assigning them.
+            username:
+              type: string
+              description: Required. 150 characters or fewer. Letters, digits and
+                @/./+/-/_ only.
+              pattern: ^[\w.@+-]+\z
+              maxLength: 150
+            first_name:
+              type: string
+              maxLength: 150
+            last_name:
+              type: string
+              maxLength: 150
+            email:
+              type: string
+              format: email
+              maxLength: 254
+            is_staff:
+              type: boolean
+              description: Designates whether the user can log into this admin site.
+            is_active:
+              type: boolean
+              description: Designates whether this user should be treated as active.
+                Unselect this instead of deleting accounts.
+            date_joined:
+              type: string
+              format: date-time
+            groups:
+              type: array
+              items:
+                type: integer
+              description: The groups this user belongs to. A user will get all permissions
+                granted to each of their groups.
+            user_permissions:
+              type: array
+              items:
+                type: integer
+              description: Specific permissions for this user.
+          required:
+          - password
+          - username
+          readOnly: true
+        pet:
+          type: object
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            name:
+              type: string
+              maxLength: 30
+            birthday:
+              type: string
+              format: date
+            gender:
+              enum:
+              - M
+              - F
+              - U
+              type: string
+            weight:
+              type: integer
+              maximum: 2147483647
+              minimum: -2147483648
+            user:
+              type: integer
+            category:
+              type: integer
+            breed:
+              type: integer
+          required:
+          - name
+          - birthday
+          - gender
+          - user
+          - category
+          readOnly: true
+      required:
+      - user_id
+      - pet_id
+      - type
+    MyTokenObtainPair:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+          writeOnly: true
+      required:
+      - username
+      - password
+    TokenRefresh:
+      type: object
+      properties:
+        refresh:
+          type: string
+        access:
+          type: string
+          readOnly: true
+      required:
+      - refresh
+    Registration:
+      type: object
+      properties:
+        username:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+\z
+          maxLength: 150
+        password:
+          type: string
+          writeOnly: true
+        email:
+          type: string
+          format: email
+        first_name:
+          type: string
+          maxLength: 150
+        last_name:
+          type: string
+          maxLength: 150
+      required:
+      - username
+      - password
+      - email
