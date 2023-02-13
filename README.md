@@ -1,4 +1,4 @@
-# pet-planner-api
+# 🐈 pet-planner-api
 Backend REST API for my petcare management application, petPal. Built with Django, Part of devCodeCamp Capstone Project.
 
 ## Running locally
