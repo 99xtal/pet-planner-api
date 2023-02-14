@@ -36,13 +36,13 @@ jobs:
 
       - name: Tag images
         run: |
-          docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:${{ github.event.pull_request.head.sha }}
-          docker tag petpal/demo-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-nginx:${{ github.event.pull_request.head.sha }}
+          docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:${{ github.event.push.after }}
+          docker tag petpal/demo-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-nginx:${{ github.event.push.after }}
 
       - name: Push to DockerHub
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:${{ github.event.pull_request.head.sha }}
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-nginx:${{ github.event.pull_request.head.sha }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:${{ github.event.push.after }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-nginx:${{ github.event.push.after }}
 
   deploy:
     runs-on: ubuntu-latest
