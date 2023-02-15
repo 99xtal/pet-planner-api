@@ -10,7 +10,7 @@ services:
       - api
     container_name: nginx
   api:
-    image: undeadoutlook/petpal-demo-api:latest
+    image: undeadoutlook/petpal-demo-api:0.1.0
     volumes:
       - static_assets:/app/staticfiles
     restart: on-failure
