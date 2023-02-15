@@ -45,10 +45,10 @@ jobs:
       - name: Tag images
         run: |
           docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:${{ github.sha }}
+          docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:latest
 
       - name: Push to DockerHub
-        run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:${{ github.sha }}
+        run: docker push --all-tags ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api
 
   deploy:
     name: Deploy to S3
