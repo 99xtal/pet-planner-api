@@ -46,6 +46,7 @@ jobs:
         run: |
           docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:${{ github.sha }}
           docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:latest
+          docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:0.1.0
 
       - name: Push to DockerHub
         run: docker push --all-tags ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api
