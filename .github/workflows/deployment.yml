@@ -40,22 +40,22 @@ jobs:
 
       - name: Build container images
         run: |
-          docker build -t petpal/demo-api ./api
-          docker build -t petpal/demo-nginx ./nginx
+          docker build -t django-api ./api
+          docker build -t django-nginx ./nginx
 
       - name: Tag images
         run: |
-          docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:${{ github.sha }}
-          docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:latest
-          docker tag petpal/demo-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api:0.1.0
-          docker tag petpal/demo-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-nginx:${{ github.sha }}
-          docker tag petpal/demo-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-nginx:latest
-          docker tag petpal/demo-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-nginx:0.1.0
+          docker tag django-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-api:${{ github.sha }}
+          docker tag django-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-api:latest
+          docker tag django-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-api:0.1.0
+          docker tag django-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-nginx:${{ github.sha }}
+          docker tag django-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-nginx:latest
+          docker tag django-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-nginx:0.1.0
 
       - name: Push to DockerHub
         run: |
-          docker push --all-tags ${{ secrets.DOCKERHUB_USERNAME }}/petpal-demo-api
-          docker push --all-tags ${{ secrets.DOCKERHUB_USERNAME}}/petpal-demo-nginx
+          docker push --all-tags ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-api
+          docker push --all-tags ${{ secrets.DOCKERHUB_USERNAME}}/petpal-django-nginx
 
   deploy:
     name: Deploy to ECS
