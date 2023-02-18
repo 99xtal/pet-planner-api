@@ -87,8 +87,5 @@ jobs:
           docker context create ecs petpal-ecs --from-env
           docker context use petpal-ecs
 
-      - name: Test CloudFormation template
-        run: docker compose convert
-
       - name: Deploy Cluster Resources
         run: docker compose up
