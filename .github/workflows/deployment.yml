@@ -77,5 +77,11 @@ jobs:
       - name: Compress Source Code
         run: zip -r source.zip ./
 
+      - name: Archive Source Code
+        uses: actions/upload-artifact@v3
+        with:
+          name: Compressed Source (.zip)
+          path: ./source.zip
+
       - name: Push to S3
         run: aws s3 cp source.zip s3://django-api-source-code
