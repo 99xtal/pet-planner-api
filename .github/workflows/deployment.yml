@@ -58,7 +58,7 @@ jobs:
           docker push --all-tags ${{ secrets.DOCKERHUB_USERNAME}}/petpal-demo-nginx
 
   deploy:
-    name: Deploy to S3
+    name: Deploy to ECS
     runs-on: ubuntu-latest
     needs:
       - build
@@ -67,9 +67,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Compress source code
-        run: zip -r api_demo_source_code.zip ./
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -77,5 +74,21 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Upload to S3 bucket
-        run: aws s3 cp api_demo_source_code.zip s3://demo-petpal-api-source-code
+      - name: Update Docker compose
+        run: sudo curl -L https://raw.githubusercontent.com/docker/compose-cli/main/scripts/install/install_linux.sh | sudo sh
+
+      - name: Check Docker Versions
+        run: |
+          docker -v
+          docker compose version
+
+      - name: Create ECS Context
+        run: |
+          docker context create ecs petpal-ecs --from-env
+          docker context use petpal-ecs
+
+      - name: Test CloudFormation template
+        run: docker --debug compose convert
+
+      - name: Deploy Cluster Resources
+        run: docker compose up
