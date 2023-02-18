@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: undeadoutlook/petpal-demo-nginx:0.1.0
+    image: undeadoutlook/petpal-django-nginx:0.1.0
     volumes:
       - static_assets:/app/staticfiles
     ports:
@@ -9,7 +9,7 @@ services:
       - api
     container_name: nginx
   api:
-    image: undeadoutlook/petpal-demo-api:0.1.0
+    image: undeadoutlook/petpal-django-api:0.1.0
     volumes:
       - static_assets:/app/staticfiles
     restart: on-failure
