@@ -23,46 +23,9 @@ jobs:
           command: install -d # Install all dependencies, including development ones
 
   docker:
-    name: Build and Push Containers
+    name: Push Containers to ECR
     runs-on: ubuntu-latest
     needs: build
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Docker Login
-        uses: docker/login-action@v2.1.0
-        with:
-          # Username used to log against the Docker registry
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          # Password or personal access token used to log against the Docker registry
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
-      - name: Build container images
-        run: |
-          docker build -t django-api ./api
-          docker build -t django-nginx ./nginx
-
-      - name: Tag images
-        run: |
-          docker tag django-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-api:${{ github.sha }}
-          docker tag django-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-api:latest
-          docker tag django-api ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-api:0.1.0
-          docker tag django-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-nginx:${{ github.sha }}
-          docker tag django-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-nginx:latest
-          docker tag django-nginx ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-nginx:0.1.0
-
-      - name: Push to DockerHub
-        run: |
-          docker push --all-tags ${{ secrets.DOCKERHUB_USERNAME }}/petpal-django-api
-          docker push --all-tags ${{ secrets.DOCKERHUB_USERNAME}}/petpal-django-nginx
-
-  deploy:
-    name: Push to S3
-    runs-on: ubuntu-latest
-    needs:
-      - build
-      - docker
 
     steps:
       - uses: actions/checkout@v2
@@ -74,14 +37,26 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Compress Source Code
-        run: zip -r source.zip ./
-
-      - name: Archive Source Code
-        uses: actions/upload-artifact@v3
+      - name: Amazon ECR "Login" Action for GitHub Actions
+        uses: aws-actions/amazon-ecr-login@v1
         with:
-          name: Compressed Source (.zip)
-          path: ./source.zip
+          registry-type: private
 
-      - name: Push to S3
-        run: aws s3 cp source.zip s3://django-api-source-code
+      - name: Build container images
+        run: |
+          docker build -t django-api ./api
+          docker build -t django-nginx ./nginx
+
+      - name: Tag images
+        run: |
+          docker tag django-api ${{ secrets.ECR_REGISTRY }}/petpal-django-api:${{ github.sha }}
+          docker tag django-api ${{ secrets.ECR_REGISTRY }}/petpal-django-api:latest
+          docker tag django-api ${{ secrets.ECR_REGISTRY }}/petpal-django-api:0.1.0
+          docker tag django-nginx ${{ secrets.ECR_REGISTRY }}/petpal-django-nginx:${{ github.sha }}
+          docker tag django-nginx ${{ secrets.ECR_REGISTRY }}/petpal-django-nginx:latest
+          docker tag django-nginx ${{ secrets.ECR_REGISTRY }}/petpal-django-nginx:0.1.0
+
+      - name: Push to DockerHub
+        run: |
+          docker push --all-tags ${{ secrets.ECR_REGISTRY }}/petpal-django-api
+          docker push --all-tags ${{ secrets.ECR_REGISTRY}}/petpal-django-nginx
