@@ -26,6 +26,8 @@ jobs:
     name: Push Containers to ECR
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      id-token: write
 
     steps:
       - uses: actions/checkout@v2
@@ -33,8 +35,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::635676917059:role/ECRPushRoleForDjangoGithub
+          role-session-name: github-ecr-role-session
           aws-region: us-east-1
 
       - name: Amazon ECR "Login" Action for GitHub Actions
