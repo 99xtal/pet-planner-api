@@ -25,4 +25,5 @@ urlpatterns = [
     path("api/medications/", include("medications.urls")),
     path("api/events/", include("events.urls")),
     path("api/widgets/", include("widgets.urls")),
+    path("ping/", include("pingpong.urls"))
 ]
