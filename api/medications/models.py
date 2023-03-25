@@ -1,4 +1,3 @@
-from turtle import ondrag
 from django.db import models
 from pets.models import PetCategory, Pet
 
