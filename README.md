@@ -8,7 +8,7 @@ There are two ways to set up this project locally. The first way is to only laun
 ### Normal setup
 After cloning repo, use pipenv to create a virtual environment and install dependencies
 ```
-cp .env.template ./api/.env
+cp .env.template .env
 source .env
 pipenv install
 ```
@@ -26,8 +26,8 @@ Running locally the Docker way is preferred because it is closer to how the appl
 
 ***Setup Commands***
 ```
-docker compose -f docker-compose.dev.yml build
-docker compose -f docker-compose.dev.yml up -d
+docker compose build
+docker compose up -d
 docker compose exec api python manage.py migrate
 
 ```
