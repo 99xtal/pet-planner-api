@@ -11,7 +11,7 @@ services:
     container_name: nginx
   api:
     build:
-      context: ./api
+      context: ./
     volumes:
       - static_assets:/app/staticfiles
     restart: on-failure
