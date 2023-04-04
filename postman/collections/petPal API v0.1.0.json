@@ -1,0 +1,3764 @@
+{
+	"info": {
+		"_postman_id": "c46c4a9e-7889-4855-94fc-265ed85dc448",
+		"name": "petPal API v0.1.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "20282247-c46c4a9e-7889-4855-94fc-265ed85dc448"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"item": [
+						{
+							"name": "create User",
+							"id": "e52731ee-e793-40df-b614-5417b195c04c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"iP+Tz\",\n  \"password\": \"<string>\",\n  \"email\": \"<email>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "a021a25b-bb2a-4a05-ae38-69907f00fccd",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"iP+Tz\",\n  \"password\": \"<string>\",\n  \"email\": \"<email>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/register/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"register",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"username\": \"iP+Tz\",\n  \"password\": \"<string>\",\n  \"email\": \"<email>\",\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "4c5fae6b-a73c-42bb-a1df-644803778d29"
+				},
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "refresh",
+							"item": [
+								{
+									"name": "create Token Refresh",
+									"id": "3afbac37-eea9-4a9c-a30b-9718a8ca4942",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"refresh\": \"<string>\",\n  \"access\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/login/refresh/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"login",
+												"refresh",
+												""
+											]
+										},
+										"description": "Takes a refresh type JSON web token and returns an access type JSON web\ntoken if the refresh token is valid."
+									},
+									"response": [
+										{
+											"id": "fe606279-31b8-4eda-a6b7-393a346bd17c",
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"refresh\": \"<string>\",\n  \"access\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/auth/login/refresh/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"auth",
+														"login",
+														"refresh",
+														""
+													]
+												},
+												"description": "Takes a refresh type JSON web token and returns an access type JSON web\ntoken if the refresh token is valid."
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"refresh\": \"<string>\",\n  \"access\": \"<string>\"\n}"
+										}
+									]
+								}
+							],
+							"id": "d35da01d-7de8-4b3f-b293-baac095d6d7c"
+						},
+						{
+							"name": "create My Token Obtain Pair",
+							"id": "36cfe25c-2f95-4579-8027-7c095eb61361",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "e61a2cec-51a1-4cf3-bc3f-bcf24dee5c99",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/auth/login/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"auth",
+												"login",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "08e3df99-04a7-4cc3-9158-0964509fbec2"
+				}
+			],
+			"id": "acbdf163-d586-4822-b37b-5e21a293bdfb"
+		},
+		{
+			"name": "widgets",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "destroy Widget",
+							"id": "53a11660-ee1f-4d1c-9f60-6f227498546d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/widgets/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"widgets",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "87134f65-0e95-49e7-979b-ba3c75aa53fb",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/widgets/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"widgets",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "b5e6e60c-4c6e-44bc-967d-a9a45f927076"
+				},
+				{
+					"name": "list Widgets",
+					"id": "02beb042-a5d2-4e5a-8413-a92a5ee4fd9a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/widgets/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"widgets",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "0f486145-561d-4134-bc74-e8fde3566465",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/widgets/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"widgets",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"user_id\": \"<integer>\",\n    \"pet_id\": \"<integer>\",\n    \"type\": \"timeline\",\n    \"id\": \"<integer>\",\n    \"user\": {\n      \"password\": \"<string>\",\n      \"username\": \"wpx-0GQP7Whz\",\n      \"id\": \"<integer>\",\n      \"last_login\": \"<dateTime>\",\n      \"is_superuser\": \"<boolean>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<email>\",\n      \"is_staff\": \"<boolean>\",\n      \"is_active\": \"<boolean>\",\n      \"date_joined\": \"<dateTime>\",\n      \"groups\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"user_permissions\": [\n        \"<integer>\",\n        \"<integer>\"\n      ]\n    },\n    \"pet\": {\n      \"name\": \"<string>\",\n      \"birthday\": \"<date>\",\n      \"gender\": \"U\",\n      \"user\": \"<integer>\",\n      \"category\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"weight\": \"<integer>\",\n      \"breed\": \"<integer>\"\n    }\n  },\n  {\n    \"user_id\": \"<integer>\",\n    \"pet_id\": \"<integer>\",\n    \"type\": \"health\",\n    \"id\": \"<integer>\",\n    \"user\": {\n      \"password\": \"<string>\",\n      \"username\": \"mz\",\n      \"id\": \"<integer>\",\n      \"last_login\": \"<dateTime>\",\n      \"is_superuser\": \"<boolean>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<email>\",\n      \"is_staff\": \"<boolean>\",\n      \"is_active\": \"<boolean>\",\n      \"date_joined\": \"<dateTime>\",\n      \"groups\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"user_permissions\": [\n        \"<integer>\",\n        \"<integer>\"\n      ]\n    },\n    \"pet\": {\n      \"name\": \"<string>\",\n      \"birthday\": \"<date>\",\n      \"gender\": \"M\",\n      \"user\": \"<integer>\",\n      \"category\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"weight\": \"<integer>\",\n      \"breed\": \"<integer>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Widget",
+					"id": "62d97e87-dd86-43a9-9a7e-45256cfd5b12",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"type\": \"bio\",\n  \"id\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"HQ-vz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/widgets/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"widgets",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "8d253df4-ff90-4fc6-a164-915bf385564d",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"type\": \"bio\",\n  \"id\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"HQ-vz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/widgets/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"widgets",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"type\": \"bio\",\n  \"id\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"HQ-vz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "64151e0f-7fdd-46cb-b7fa-1d1f0506ca85"
+		},
+		{
+			"name": "pets",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "retrieve Pet",
+							"id": "fafbd8f2-bda8-459b-b4af-ed86f0197129",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/pets/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pets",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c8d8eec1-9c40-4b9b-887a-d4b8072a3c06",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pets/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pets",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "update Pet",
+							"id": "b74bdcf6-5a4f-4b85-ae5d-db9452d18259",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pets/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pets",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "3d9ad535-619b-477d-9f27-f4b00d1b4f24",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/pets/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pets",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "partial Update Pet",
+							"id": "c507946b-1c18-4a45-99f2-b01defd6ddfc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pets/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pets",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "3ae20c1d-6998-4fef-b724-11ed24ac6d4f",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/pets/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pets",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "destroy Pet",
+							"id": "4b232830-9b5c-471c-a15c-c6c2657a57e6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/pets/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pets",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "d21e1f07-8aed-42d5-897d-06cdb24e518c",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/pets/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pets",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "6ec9fd04-df08-4142-8040-36f81edd254b"
+				},
+				{
+					"name": "breeds",
+					"item": [
+						{
+							"name": "list Breeds",
+							"id": "07854a7c-b00a-486d-af1d-a8df5eccd456",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/pets/breeds/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pets",
+										"breeds",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "39dabf59-1159-4cad-aa35-847b5c6e1e84",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/pets/breeds/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"pets",
+												"breeds",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  },\n  {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n]"
+								}
+							]
+						}
+					],
+					"id": "e6be1380-97be-479d-8a3b-c77d226e0262"
+				},
+				{
+					"name": "list Pets",
+					"id": "b3f4aae4-dc0d-46d8-815b-841984b9198a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/pets/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pets",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "5b3b805a-7fc0-479a-90d8-077bafda9096",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/pets/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pets",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"user_id\": \"<integer>\",\n    \"category_id\": \"<integer>\",\n    \"breed_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"user\": {\n      \"password\": \"<string>\",\n      \"username\": \"R8b3J-vVPz\",\n      \"id\": \"<integer>\",\n      \"last_login\": \"<dateTime>\",\n      \"is_superuser\": \"<boolean>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<email>\",\n      \"is_staff\": \"<boolean>\",\n      \"is_active\": \"<boolean>\",\n      \"date_joined\": \"<dateTime>\",\n      \"groups\": [\n        {\n          \"name\": \"<string>\",\n          \"id\": \"<integer>\",\n          \"permissions\": [\n            \"<integer>\",\n            \"<integer>\"\n          ]\n        },\n        {\n          \"name\": \"<string>\",\n          \"id\": \"<integer>\",\n          \"permissions\": [\n            \"<integer>\",\n            \"<integer>\"\n          ]\n        }\n      ],\n      \"user_permissions\": [\n        {\n          \"name\": \"<string>\",\n          \"codename\": \"<string>\",\n          \"content_type\": \"<integer>\",\n          \"id\": \"<integer>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"codename\": \"<string>\",\n          \"content_type\": \"<integer>\",\n          \"id\": \"<integer>\"\n        }\n      ]\n    },\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"breed\": {\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"category\": {\n        \"category\": \"<string>\",\n        \"id\": \"<integer>\"\n      },\n      \"species\": {\n        \"binomial_name\": \"<string>\",\n        \"id\": \"<integer>\"\n      }\n    }\n  },\n  {\n    \"user_id\": \"<integer>\",\n    \"category_id\": \"<integer>\",\n    \"breed_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"user\": {\n      \"password\": \"<string>\",\n      \"username\": \"nRJ.xq._VaVz\",\n      \"id\": \"<integer>\",\n      \"last_login\": \"<dateTime>\",\n      \"is_superuser\": \"<boolean>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<email>\",\n      \"is_staff\": \"<boolean>\",\n      \"is_active\": \"<boolean>\",\n      \"date_joined\": \"<dateTime>\",\n      \"groups\": [\n        {\n          \"name\": \"<string>\",\n          \"id\": \"<integer>\",\n          \"permissions\": [\n            \"<integer>\",\n            \"<integer>\"\n          ]\n        },\n        {\n          \"name\": \"<string>\",\n          \"id\": \"<integer>\",\n          \"permissions\": [\n            \"<integer>\",\n            \"<integer>\"\n          ]\n        }\n      ],\n      \"user_permissions\": [\n        {\n          \"name\": \"<string>\",\n          \"codename\": \"<string>\",\n          \"content_type\": \"<integer>\",\n          \"id\": \"<integer>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"codename\": \"<string>\",\n          \"content_type\": \"<integer>\",\n          \"id\": \"<integer>\"\n        }\n      ]\n    },\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"breed\": {\n      \"name\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"category\": {\n        \"category\": \"<string>\",\n        \"id\": \"<integer>\"\n      },\n      \"species\": {\n        \"binomial_name\": \"<string>\",\n        \"id\": \"<integer>\"\n      }\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Pet",
+					"id": "ec6ff40c-cfa6-4ba5-83a3-84658dde0f80",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pets/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pets",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2c688df2-a2cf-4245-91c1-1936b4139d33",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/pets/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"pets",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"user_id\": \"<integer>\",\n  \"category_id\": \"<integer>\",\n  \"breed_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"birthday\": \"<date>\",\n  \"gender\": \"M\",\n  \"id\": \"<integer>\",\n  \"weight\": \"<integer>\",\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"jatvowg8j3z\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"id\": \"<integer>\",\n        \"permissions\": [\n          \"<integer>\",\n          \"<integer>\"\n        ]\n      }\n    ],\n    \"user_permissions\": [\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"codename\": \"<string>\",\n        \"content_type\": \"<integer>\",\n        \"id\": \"<integer>\"\n      }\n    ]\n  },\n  \"category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"breed\": {\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"species\": {\n      \"binomial_name\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "da80e98c-5cba-4768-9e92-1f87ddb8735a"
+		},
+		{
+			"name": "medications",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "retrieve Medication",
+							"id": "82caf424-f721-42ce-990f-196ba5e5c70a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/medications/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"medications",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "3208543e-26ce-4187-a586-ccd22e404dcd",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/medications/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "update Medication",
+							"id": "1301cd15-1747-48ea-bbdc-bc9c091201b4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/medications/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"medications",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "523ea675-2ea3-4a71-a769-fbfaa5086e01",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/medications/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "partial Update Medication",
+							"id": "74fafe30-7ca5-4ceb-94b4-7a0ff2edd2e1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/medications/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"medications",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "64084890-1082-4dd1-b967-32b8343f757c",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/medications/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "destroy Medication",
+							"id": "7792d6d9-a932-440d-ba1a-dc3a3b4a6ea2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/medications/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"medications",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "ea9af6fe-b918-47fa-9ed4-8e78726465d9",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/medications/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "0249d0d1-c16d-42d8-854c-75f8e6b15a0b"
+				},
+				{
+					"name": "medicines",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "retrieve Medicine",
+									"id": "9185b793-782e-4681-9795-115b57031e76",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/medications/medicines/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												"medicines",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "834426f9-f9b8-4796-9bfe-cc744da69922",
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/medications/medicines/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"medications",
+														"medicines",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "update Medicine",
+									"id": "bbd0b95d-b400-4f1a-89f8-065753ffb940",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/medications/medicines/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												"medicines",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "80ed2b48-455c-4057-aa18-785d27422644",
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/medications/medicines/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"medications",
+														"medicines",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "partial Update Medicine",
+									"id": "635a3d60-d80c-4943-83fd-28d53f1a748e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/medications/medicines/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												"medicines",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "4ee9fa8a-49d0-44ff-9ed7-bd1bd7b9f10e",
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/medications/medicines/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"medications",
+														"medicines",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "destroy Medicine",
+									"id": "f10c1f68-cb01-4701-87db-44051658d6ae",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/medications/medicines/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												"medicines",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "225dfc84-5b33-498b-987a-2351c350c5fa",
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/medications/medicines/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"medications",
+														"medicines",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": null
+										}
+									]
+								}
+							],
+							"id": "0eef0f2e-e388-4692-8fda-9c0da95f9b9f"
+						},
+						{
+							"name": "list Medicines",
+							"id": "20b2b9b4-8604-42c4-8d66-3da4069518f5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/medications/medicines/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"medications",
+										"medicines",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "de2b1ccc-e704-4f7d-beee-48c9cfe94ce9",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/medications/medicines/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												"medicines",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"pet_category_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  {\n    \"pet_category_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "create Medicine",
+							"id": "f173f3fd-75f0-4fcd-ac27-5d4e8bfd1c8b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/medications/medicines/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"medications",
+										"medicines",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "c2a6c7c7-3ae7-4ea4-9011-e3cc18e6e2c2",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/medications/medicines/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"medications",
+												"medicines",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"pet_category\": \"<integer>\",\n  \"id\": \"<integer>\"\n}"
+								}
+							]
+						}
+					],
+					"id": "2d22b73c-8766-49f3-b6f9-0c0c0bce5a10"
+				},
+				{
+					"name": "list Medications",
+					"id": "6a19fdd2-8cae-4a77-a3c1-a8d977f8b1d7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/medications/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"medications",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d6981ebc-50b5-4f3c-bebc-4bebe435eec5",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/medications/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"medications",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"medicine_id\": \"<integer>\",\n    \"pet_id\": \"<integer>\",\n    \"amount\": \"<string>\",\n    \"amount_units\": \"drops\",\n    \"time\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"medicine\": {\n      \"name\": \"<string>\",\n      \"pet_category\": \"<integer>\",\n      \"id\": \"<integer>\"\n    },\n    \"pet\": {\n      \"name\": \"<string>\",\n      \"birthday\": \"<date>\",\n      \"gender\": \"F\",\n      \"user\": \"<integer>\",\n      \"category\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"weight\": \"<integer>\",\n      \"breed\": \"<integer>\"\n    }\n  },\n  {\n    \"medicine_id\": \"<integer>\",\n    \"pet_id\": \"<integer>\",\n    \"amount\": \"<string>\",\n    \"amount_units\": \"pills\",\n    \"time\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"medicine\": {\n      \"name\": \"<string>\",\n      \"pet_category\": \"<integer>\",\n      \"id\": \"<integer>\"\n    },\n    \"pet\": {\n      \"name\": \"<string>\",\n      \"birthday\": \"<date>\",\n      \"gender\": \"F\",\n      \"user\": \"<integer>\",\n      \"category\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"weight\": \"<integer>\",\n      \"breed\": \"<integer>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Medication",
+					"id": "946722b3-07f1-487d-a8e2-136231694d3b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/medications/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"medications",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e4d16053-d3a3-4bd6-9548-a4ed9e110369",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/medications/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"medications",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"medicine_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"pills\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"medicine\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"M\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "06838598-ea57-436d-95e7-da954140ef2d"
+		},
+		{
+			"name": "meals",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "retrieve Meal",
+							"id": "5224af15-4aed-45cf-856c-d7684cc1ebaa",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/meals/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"meals",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "b7180305-e631-44ad-8eaf-9f0ac416de9a",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/meals/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "update Meal",
+							"id": "451591fb-5366-4c17-a949-c1cac76a78ce",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/meals/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"meals",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "4e4df25b-e08e-48a9-a700-dc3aa1ee2bd1",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/meals/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "partial Update Meal",
+							"id": "3c2c7070-2ff2-4225-92e5-1b28a8792667",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/meals/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"meals",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "3823b47c-c9be-4f21-b30f-936fc8028ec4",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/meals/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "destroy Meal",
+							"id": "f8d076a4-6aca-428e-aac1-8c29db4492fb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/meals/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"meals",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "fc8b77d1-454b-46b5-a446-daa6693aa485",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/meals/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "89a9d988-a9f8-45cc-8092-492b080f6d0b"
+				},
+				{
+					"name": "foods",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "retrieve Food",
+									"id": "35cca0e8-bc90-414e-b5a8-c44680aed9ed",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/meals/foods/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												"foods",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "1f562110-1928-4e00-af8f-fc23833e4f93",
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/meals/foods/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"meals",
+														"foods",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "update Food",
+									"id": "30f267f9-789d-437a-9623-4fc6eb8d35e0",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/meals/foods/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												"foods",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "9784b8b9-cdf4-443b-803e-7bc3af49f341",
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/meals/foods/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"meals",
+														"foods",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "partial Update Food",
+									"id": "6c767835-aaeb-4f2c-b674-57da2711ff75",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/meals/foods/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												"foods",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "86cc6606-1ddb-466b-945f-63c2abaf46ca",
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/meals/foods/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"meals",
+														"foods",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}"
+										}
+									]
+								},
+								{
+									"name": "destroy Food",
+									"id": "5c4e695c-3abd-409d-a6c4-30ff3972cb04",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/meals/foods/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												"foods",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "aeed1ea7-fcc1-440e-b01f-e3dd6d6b0976",
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/meals/foods/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"meals",
+														"foods",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": null
+										}
+									]
+								}
+							],
+							"id": "d29b1040-bcd6-4951-98f0-67020b02b9e6"
+						},
+						{
+							"name": "list Foods",
+							"id": "4bda36ba-9a63-4bb4-b3cd-62bf3e0df0b6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/meals/foods/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"meals",
+										"foods",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "32650e86-2851-4d0e-a37f-3d18c0efbe7f",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/meals/foods/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												"foods",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"pet_category_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"pet_category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  },\n  {\n    \"pet_category_id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"pet_category\": {\n      \"category\": \"<string>\",\n      \"id\": \"<integer>\"\n    }\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "create Food",
+							"id": "e1c5d944-a33e-475b-97da-f2ae2dadc7fe",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/meals/foods/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"meals",
+										"foods",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "e395cb97-cd30-4f91-b918-c633716cb960",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/meals/foods/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"meals",
+												"foods",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"pet_category_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"pet_category\": {\n    \"category\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n}"
+								}
+							]
+						}
+					],
+					"id": "aef4efb6-44fa-4a7f-8462-9bf9c69b3e7f"
+				},
+				{
+					"name": "list Meals",
+					"id": "6f590b29-6ff0-4d15-8154-a8410ac6fcc6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/meals/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meals",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "5d2ad9eb-4160-4f5c-b4f9-367ec4baf0fd",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/meals/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"meals",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"food_id\": \"<integer>\",\n    \"pet_id\": \"<integer>\",\n    \"amount\": \"<string>\",\n    \"amount_units\": \"whole\",\n    \"time\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"food\": {\n      \"name\": \"<string>\",\n      \"pet_category\": \"<integer>\",\n      \"id\": \"<integer>\"\n    },\n    \"pet\": {\n      \"name\": \"<string>\",\n      \"birthday\": \"<date>\",\n      \"gender\": \"F\",\n      \"user\": \"<integer>\",\n      \"category\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"weight\": \"<integer>\",\n      \"breed\": \"<integer>\"\n    }\n  },\n  {\n    \"food_id\": \"<integer>\",\n    \"pet_id\": \"<integer>\",\n    \"amount\": \"<string>\",\n    \"amount_units\": \"kg\",\n    \"time\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"food\": {\n      \"name\": \"<string>\",\n      \"pet_category\": \"<integer>\",\n      \"id\": \"<integer>\"\n    },\n    \"pet\": {\n      \"name\": \"<string>\",\n      \"birthday\": \"<date>\",\n      \"gender\": \"U\",\n      \"user\": \"<integer>\",\n      \"category\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"weight\": \"<integer>\",\n      \"breed\": \"<integer>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Meal",
+					"id": "d2f5f5c1-bc25-470a-a644-7112296e8944",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/meals/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"meals",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a6eacab4-24db-4398-a783-f87a87153ab3",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/meals/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"meals",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"food_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"amount\": \"<string>\",\n  \"amount_units\": \"whole\",\n  \"time\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"food\": {\n    \"name\": \"<string>\",\n    \"pet_category\": \"<integer>\",\n    \"id\": \"<integer>\"\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"U\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "d7494556-4bd0-4845-95d7-358b7792d723"
+		},
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "retrieve Event",
+							"id": "e6a90c4a-d908-41c4-a304-8515d0980aec",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "db627608-da5b-4003-bbd8-1bad0816ed0c",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "update Event",
+							"id": "a73c04d0-03e9-4767-925c-88a08606033d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "85be2996-a3ea-4a33-b500-5c8c232c34be",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "partial Update Event",
+							"id": "ac7cadef-4118-42da-8b69-e871d0965d83",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "796ca82a-3da5-450f-85a2-571f2ec0e36c",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "destroy Event",
+							"id": "11f234fa-235e-4203-9b73-af864302811a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/events/:id/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										":id",
+										""
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "dedd4741-9650-479b-88a0-fa679a1604fd",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/events/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "d05ba28f-b002-4327-8fa1-24027911e6f7"
+				},
+				{
+					"name": "categories",
+					"item": [
+						{
+							"name": "list Event Categorys",
+							"id": "9355138a-7241-451f-bc96-04dad8add626",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/categories/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										"categories",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "e49a0df5-6939-45db-b49e-ba48071487f0",
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/events/categories/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"events",
+												"categories",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  }\n]"
+								}
+							]
+						}
+					],
+					"id": "ebdcabfe-4806-4045-b630-de809082a3b8"
+				},
+				{
+					"name": "list Events",
+					"id": "d5032061-9ddc-43e5-934c-374de3124ee3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/events/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "27274989-6299-4d7e-af33-d80239234889",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/events/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"event_category_id\": \"<integer>\",\n    \"user_id\": \"<integer>\",\n    \"pet_id\": \"<integer>\",\n    \"date\": \"<date>\",\n    \"id\": \"<integer>\",\n    \"time\": \"<string>\",\n    \"description\": \"<string>\",\n    \"event_category\": {\n      \"title\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"user\": {\n      \"password\": \"<string>\",\n      \"username\": \"GyGz\",\n      \"id\": \"<integer>\",\n      \"last_login\": \"<dateTime>\",\n      \"is_superuser\": \"<boolean>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<email>\",\n      \"is_staff\": \"<boolean>\",\n      \"is_active\": \"<boolean>\",\n      \"date_joined\": \"<dateTime>\",\n      \"groups\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"user_permissions\": [\n        \"<integer>\",\n        \"<integer>\"\n      ]\n    },\n    \"pet\": {\n      \"name\": \"<string>\",\n      \"birthday\": \"<date>\",\n      \"gender\": \"U\",\n      \"user\": \"<integer>\",\n      \"category\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"weight\": \"<integer>\",\n      \"breed\": \"<integer>\"\n    }\n  },\n  {\n    \"event_category_id\": \"<integer>\",\n    \"user_id\": \"<integer>\",\n    \"pet_id\": \"<integer>\",\n    \"date\": \"<date>\",\n    \"id\": \"<integer>\",\n    \"time\": \"<string>\",\n    \"description\": \"<string>\",\n    \"event_category\": {\n      \"title\": \"<string>\",\n      \"id\": \"<integer>\"\n    },\n    \"user\": {\n      \"password\": \"<string>\",\n      \"username\": \"3fCWZusL6az\",\n      \"id\": \"<integer>\",\n      \"last_login\": \"<dateTime>\",\n      \"is_superuser\": \"<boolean>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<email>\",\n      \"is_staff\": \"<boolean>\",\n      \"is_active\": \"<boolean>\",\n      \"date_joined\": \"<dateTime>\",\n      \"groups\": [\n        \"<integer>\",\n        \"<integer>\"\n      ],\n      \"user_permissions\": [\n        \"<integer>\",\n        \"<integer>\"\n      ]\n    },\n    \"pet\": {\n      \"name\": \"<string>\",\n      \"birthday\": \"<date>\",\n      \"gender\": \"M\",\n      \"user\": \"<integer>\",\n      \"category\": \"<integer>\",\n      \"id\": \"<integer>\",\n      \"weight\": \"<integer>\",\n      \"breed\": \"<integer>\"\n    }\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Event",
+					"id": "9e1ae37c-79c4-43d3-bffa-bf0026a7e18d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/events/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"events",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e37a6ba8-5e76-4c5d-bc2e-ad68baa82d07",
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/events/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"events",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"event_category_id\": \"<integer>\",\n  \"user_id\": \"<integer>\",\n  \"pet_id\": \"<integer>\",\n  \"date\": \"<date>\",\n  \"id\": \"<integer>\",\n  \"time\": \"<string>\",\n  \"description\": \"<string>\",\n  \"event_category\": {\n    \"title\": \"<string>\",\n    \"id\": \"<integer>\"\n  },\n  \"user\": {\n    \"password\": \"<string>\",\n    \"username\": \"6U@imz\",\n    \"id\": \"<integer>\",\n    \"last_login\": \"<dateTime>\",\n    \"is_superuser\": \"<boolean>\",\n    \"first_name\": \"<string>\",\n    \"last_name\": \"<string>\",\n    \"email\": \"<email>\",\n    \"is_staff\": \"<boolean>\",\n    \"is_active\": \"<boolean>\",\n    \"date_joined\": \"<dateTime>\",\n    \"groups\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"user_permissions\": [\n      \"<integer>\",\n      \"<integer>\"\n    ]\n  },\n  \"pet\": {\n    \"name\": \"<string>\",\n    \"birthday\": \"<date>\",\n    \"gender\": \"F\",\n    \"user\": \"<integer>\",\n    \"category\": \"<integer>\",\n    \"id\": \"<integer>\",\n    \"weight\": \"<integer>\",\n    \"breed\": \"<integer>\"\n  }\n}"
+						}
+					]
+				}
+			],
+			"id": "775536ce-d93a-4b02-b217-658dc84e6e7e"
+		}
+	],
+	"variable": [
+		{
+			"id": "ee5e8582-fd6c-4f85-9b41-f73ecacb430f",
+			"key": "baseUrl",
+			"value": "petpal-api-alb-717499355.us-east-1.elb.amazonaws.com/api"
+		}
+	]
+}
