@@ -1,4 +1,4 @@
-name: Production Deployment
+name: Deployment
 
 on:
   push:
@@ -46,19 +46,14 @@ jobs:
 
       - name: Build container images
         run: |
-          docker build -t django-api ./api
-          docker build -t django-nginx ./nginx
+          docker build -t django-api .
 
       - name: Tag images
         run: |
           docker tag django-api ${{ secrets.ECR_REGISTRY }}/petpal-django-api:${{ github.sha }}
           docker tag django-api ${{ secrets.ECR_REGISTRY }}/petpal-django-api:latest
           docker tag django-api ${{ secrets.ECR_REGISTRY }}/petpal-django-api:0.1.0
-          docker tag django-nginx ${{ secrets.ECR_REGISTRY }}/petpal-django-nginx:${{ github.sha }}
-          docker tag django-nginx ${{ secrets.ECR_REGISTRY }}/petpal-django-nginx:latest
-          docker tag django-nginx ${{ secrets.ECR_REGISTRY }}/petpal-django-nginx:0.1.0
 
       - name: Push to DockerHub
         run: |
           docker push --all-tags ${{ secrets.ECR_REGISTRY }}/petpal-django-api
-          docker push --all-tags ${{ secrets.ECR_REGISTRY}}/petpal-django-nginx
