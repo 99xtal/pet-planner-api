@@ -9,6 +9,7 @@ id = 3f4165fe-34c1-4eef-8779-256035f17a32
 
 [config.relations.collections]
 rootDirectory = postman/collections
+files[] = {"id":"20282247-71f2decf-9e7a-4e7b-ab0a-867f62b8ca58","path":"petPal API v0.1.0(1).json","metaData":{}}
 files[] = {"id":"20282247-c46c4a9e-7889-4855-94fc-265ed85dc448","path":"petPal API v0.1.0.json","metaData":{}}
 
 [config.relations.collections.metaData]
