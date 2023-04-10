@@ -1,14 +1,16 @@
 openapi: 3.0.2
 info:
   title: 'petPal API'
+  description: 'REST API that provides access to resources for the petPal Django web app.'
   version: '0.1.0'
 servers:
   - url: petpal-api-alb-717499355.us-east-1.elb.amazonaws.com/api
+    description: AWS Dev Server
 paths:
   /pets/:
     get:
       operationId: listPets
-      description: ''
+      summary: 'Retrieve all pets owned by current user'
       parameters: []
       responses:
         '200':
@@ -23,7 +25,7 @@ paths:
       - pets
     post:
       operationId: createPet
-      description: ''
+      summary: 'Create a new pet'
       parameters: []
       requestBody:
         content:
@@ -42,7 +44,7 @@ paths:
   /pets/{id}/:
     get:
       operationId: retrievePet
-      description: ''
+      summary: 'Retrieve a pet'
       parameters:
       - name: id
         in: path
@@ -61,7 +63,7 @@ paths:
       - pets
     put:
       operationId: updatePet
-      description: ''
+      summary: 'Update an existing pet'
       parameters:
       - name: id
         in: path
@@ -85,7 +87,7 @@ paths:
       - pets
     patch:
       operationId: partialUpdatePet
-      description: ''
+      summary: 'Partial update an existing pet'
       parameters:
       - name: id
         in: path
@@ -109,7 +111,7 @@ paths:
       - pets
     delete:
       operationId: destroyPet
-      description: ''
+      summary: 'Delete a pet'
       parameters:
       - name: id
         in: path
@@ -125,8 +127,13 @@ paths:
   /pets/breeds/:
     get:
       operationId: listBreeds
-      description: ''
-      parameters: []
+      summary: 'Retrieve a list of pet breeds'
+      parameters:
+        - name: 'category'
+          in: 'query'
+          description: "Breed category id"
+          schema:
+            type: integer
       responses:
         '200':
           content:
@@ -141,8 +148,13 @@ paths:
   /meals/:
     get:
       operationId: listMeals
-      description: ''
-      parameters: []
+      summary: 'Retrieve a list of a pets recurring meals'
+      parameters:
+        - name: 'petId'
+          in: 'query'
+          description: ""
+          schema:
+            type: integer
       responses:
         '200':
           content:
@@ -156,7 +168,7 @@ paths:
       - meals
     post:
       operationId: createMeal
-      description: ''
+      summary: 'Create a recurring meal'
       parameters: []
       requestBody:
         content:
@@ -175,7 +187,7 @@ paths:
   /meals/{id}/:
     get:
       operationId: retrieveMeal
-      description: ''
+      summary: 'Retrieve a recurring meal'
       parameters:
       - name: id
         in: path
@@ -194,7 +206,7 @@ paths:
       - meals
     put:
       operationId: updateMeal
-      description: ''
+      summary: 'Update an existing meal'
       parameters:
       - name: id
         in: path
@@ -218,7 +230,7 @@ paths:
       - meals
     patch:
       operationId: partialUpdateMeal
-      description: ''
+      summary: 'Partial update an existing meal'
       parameters:
       - name: id
         in: path
@@ -242,7 +254,7 @@ paths:
       - meals
     delete:
       operationId: destroyMeal
-      description: ''
+      summary: 'Delete a meal'
       parameters:
       - name: id
         in: path
@@ -258,8 +270,13 @@ paths:
   /meals/foods/:
     get:
       operationId: listFoods
-      description: ''
-      parameters: []
+      summary: 'Retrieve a list of pet foods'
+      parameters:
+        - name: categoryId
+          in: query
+          description: 'Pet category id'
+          schema:
+            type: integer
       responses:
         '200':
           content:
@@ -273,7 +290,7 @@ paths:
       - foods
     post:
       operationId: createFood
-      description: ''
+      summary: 'Create a new food'
       parameters: []
       requestBody:
         content:
@@ -292,7 +309,7 @@ paths:
   /meals/foods/{id}/:
     get:
       operationId: retrieveFood
-      description: ''
+      summary: 'Retrieve a food item'
       parameters:
       - name: id
         in: path
@@ -311,7 +328,7 @@ paths:
       - foods
     put:
       operationId: updateFood
-      description: ''
+      summary: 'Update an existing food item'
       parameters:
       - name: id
         in: path
@@ -335,7 +352,7 @@ paths:
       - foods
     patch:
       operationId: partialUpdateFood
-      description: ''
+      summary: 'Partial update an existing food item'
       parameters:
       - name: id
         in: path
@@ -359,7 +376,7 @@ paths:
       - foods
     delete:
       operationId: destroyFood
-      description: ''
+      summary: 'Delete a food item'
       parameters:
       - name: id
         in: path
@@ -375,8 +392,13 @@ paths:
   /medications/:
     get:
       operationId: listMedications
-      description: ''
-      parameters: []
+      summary: 'Retrieve a list of a pets recurring medications'
+      parameters:
+        - name: 'petId'
+          in: query
+          description: 'petId'
+          schema:
+            type: integer
       responses:
         '200':
           content:
@@ -390,7 +412,7 @@ paths:
       - medications
     post:
       operationId: createMedication
-      description: ''
+      summary: 'Create a recurring medication'
       parameters: []
       requestBody:
         content:
@@ -409,7 +431,7 @@ paths:
   /medications/{id}/:
     get:
       operationId: retrieveMedication
-      description: ''
+      summary: 'Retrieve a recurring medication'
       parameters:
       - name: id
         in: path
@@ -428,7 +450,7 @@ paths:
       - medications
     put:
       operationId: updateMedication
-      description: ''
+      summary: 'Update an existing medication'
       parameters:
       - name: id
         in: path
@@ -452,7 +474,7 @@ paths:
       - medications
     patch:
       operationId: partialUpdateMedication
-      description: ''
+      summary: 'Partial update an existing medication'
       parameters:
       - name: id
         in: path
@@ -476,7 +498,7 @@ paths:
       - medications
     delete:
       operationId: destroyMedication
-      description: ''
+      summary: 'Delete a medication'
       parameters:
       - name: id
         in: path
@@ -488,7 +510,7 @@ paths:
         '204':
           description: ''
       tags:
-      - api
+      - medications
   /medications/medicines/:
     get:
       operationId: listMedicines
@@ -1575,3 +1597,20 @@ components:
       - username
       - password
       - email
+tags:
+  - name: auth
+    description: Operations for JWT authentication
+  - name: pets
+    description: User's pets
+  - name: meals
+    description: Recurring meals that are associated with a pet
+  - name: foods
+    description: User defined food items that are associated with meals
+  - name: medications
+    description: Recurring medications that are associated with a pet
+  - name: medicine
+    description: User defined medicine items that are associated with medications
+  - name: events
+    description: Health event and life milestones related to a pet
+  - name: widgets
+    description: Pet information modules that are displayed on the user's dashboard
