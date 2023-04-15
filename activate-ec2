@@ -8,7 +8,7 @@ unzip awscliv2.zip
 sudo ./aws/install
 git clone https://github.com/petpal-project/django-api.git
 sudo cp django-api/nginx.conf /etc/nginx/sites-available/petpal.nginx.conf
-sudo ln -s /etc/nginx/sites-available/ /etc/nginx/sites-enabled
+sudo ln -s /etc/nginx/sites-available/petpal.nginx.conf /etc/nginx/sites-enabled
 cd django-api
 python3 -m venv venv
 source venv/bin/activate
