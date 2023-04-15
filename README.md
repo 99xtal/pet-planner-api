@@ -3,14 +3,18 @@ Backend REST API for my petcare management web app, petPal. Built with Django, o
 
 ## Running locally
 
-There are two ways to set up this project locally. The first way is to only launch the Django server with DB envvars set locally. The better way is to spin up a development environment with Docker Compose.
+Create a virtual environment and install dependencies
+```
+python -m venv venv
+source venv/bin/activate
+python -m pip install -r requirements.txt
+```
 
 ### Normal setup
 After cloning repo, use pipenv to create a virtual environment and install dependencies
 ```
 cp .env.template .env
 source .env
-pipenv install
 ```
 Run migrations if necessary, and run the app
 ```
@@ -29,5 +33,4 @@ Running locally the Docker way is preferred because it is closer to how the appl
 docker compose build
 docker compose up -d
 docker compose exec api python manage.py migrate
-
 ```
