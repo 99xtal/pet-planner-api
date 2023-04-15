@@ -11,7 +11,7 @@ ENV APP_HOME /home/app/api
 RUN mkdir ./staticfiles
 
 RUN pip install pipenv
-RUN pipenv install --system --deploy
+RUN pipenv install --system --deploy --ignore-pipfile
 
 COPY . .
 RUN python3 manage.py collectstatic
