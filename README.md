@@ -34,3 +34,10 @@ docker compose build
 docker compose up -d
 docker compose exec api python manage.py migrate
 ```
+
+### Generate SSL Certs for HTTPS
+SSH into the server running this API (after running `activate-ec2` script) and run:
+```
+sudo certbot --nginx
+sudo systemctl restart nginx
+```

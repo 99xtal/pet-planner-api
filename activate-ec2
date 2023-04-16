@@ -3,10 +3,13 @@
 # source /django-api/activate-ec2
 sudo apt update
 sudo apt install -y mysql-server libmysqlclient-dev git python3.10-venv unzip nginx gcc python3-dev
+sudo snap install core
+sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
-git clone https://github.com/petpal-project/django-api.git
 sudo cp django-api/nginx.conf /etc/nginx/sites-available/petpal.nginx.conf
 sudo ln -s /etc/nginx/sites-available/petpal.nginx.conf /etc/nginx/sites-enabled
 cd django-api
