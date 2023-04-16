@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "medications",
     "events",
     "widgets",
+    "docs"
 ]
 
 MIDDLEWARE = [
@@ -172,3 +173,4 @@ SIMPLE_JWT = {
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = False
+CSRF_TRUSTED_ORIGINS = []
