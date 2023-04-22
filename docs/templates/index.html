@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +19,7 @@
   <script>
     window.onload = () => {
       window.ui = SwaggerUIBundle({
-        url: 'https://api.zenpet.app/static/openapi.yaml',
+        url: "http://{{ request.get_host }}" + "{% static 'v0.1.0.yaml' %}",
         dom_id: '#swagger-ui',
         presets: [
           SwaggerUIBundle.presets.apis,
