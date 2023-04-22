@@ -1,11 +1,11 @@
 openapi: 3.0.2
 info:
-  title: 'ZenPet API'
+  title: 'PetPal API'
   description: 'REST API that provides access to resources for the petPal Django web app.'
   version: '0.1.0'
 servers:
-  - url: petpal-api-alb-717499355.us-east-1.elb.amazonaws.com/api
-    description: AWS Dev Server
+  - url: https://api.zenpet.app/api
+    description: AWS Prod Server
 paths:
   /pets/:
     get:
@@ -514,8 +514,13 @@ paths:
   /medications/medicines/:
     get:
       operationId: listMedicines
-      description: ''
-      parameters: []
+      summary: 'Retrieve a list of medicines by pet category'
+      parameters:
+        - name: 'category'
+          in: query
+          description: 'Pet category'
+          schema:
+            type: string
       responses:
         '200':
           content:
@@ -529,7 +534,7 @@ paths:
       - medicine
     post:
       operationId: createMedicine
-      description: ''
+      summary: 'Create a new medicine'
       parameters: []
       requestBody:
         content:
@@ -548,7 +553,7 @@ paths:
   /medications/medicines/{id}/:
     get:
       operationId: retrieveMedicine
-      description: ''
+      summary: 'Retrieve a medicine'
       parameters:
       - name: id
         in: path
@@ -567,7 +572,7 @@ paths:
       - medicine
     put:
       operationId: updateMedicine
-      description: ''
+      summary: 'Update an existing medicine'
       parameters:
       - name: id
         in: path
@@ -591,7 +596,7 @@ paths:
       - medicine
     patch:
       operationId: partialUpdateMedicine
-      description: ''
+      summary: 'Partial update an existing medicine'
       parameters:
       - name: id
         in: path
@@ -615,7 +620,7 @@ paths:
       - medicine
     delete:
       operationId: destroyMedicine
-      description: ''
+      summary: 'Delete a medicine'
       parameters:
       - name: id
         in: path
@@ -631,8 +636,18 @@ paths:
   /events/:
     get:
       operationId: listEvents
-      description: ''
-      parameters: []
+      summary: 'Retrieve a list of events'
+      parameters:
+        - name: 'category'
+          in: query
+          description: 'Event category'
+          schema:
+            type: string
+        - name: 'petId'
+          in: query
+          description: 'Pet id'
+          schema:
+            type: integer
       responses:
         '200':
           content:
@@ -646,7 +661,7 @@ paths:
       - events
     post:
       operationId: createEvent
-      description: ''
+      summary: 'Create a new event'
       parameters: []
       requestBody:
         content:
@@ -665,7 +680,7 @@ paths:
   /events/{id}/:
     get:
       operationId: retrieveEvent
-      description: ''
+      summary: 'Retrieve an event'
       parameters:
       - name: id
         in: path
@@ -684,7 +699,7 @@ paths:
       - events
     put:
       operationId: updateEvent
-      description: ''
+      summary: 'Update an existing event'
       parameters:
       - name: id
         in: path
@@ -708,7 +723,7 @@ paths:
       - events
     patch:
       operationId: partialUpdateEvent
-      description: ''
+      summary: 'Partial update an existing event'
       parameters:
       - name: id
         in: path
@@ -732,7 +747,7 @@ paths:
       - events
     delete:
       operationId: destroyEvent
-      description: ''
+      summary: 'Delete an event'
       parameters:
       - name: id
         in: path
@@ -748,7 +763,7 @@ paths:
   /events/categories/:
     get:
       operationId: listEventCategorys
-      description: ''
+      summary: 'Retrieve a list of event categories'
       parameters: []
       responses:
         '200':
@@ -764,7 +779,7 @@ paths:
   /widgets/:
     get:
       operationId: listWidgets
-      description: ''
+      summary: 'Retrieve a list of widgets associated with current user'
       parameters: []
       responses:
         '200':
@@ -779,7 +794,7 @@ paths:
       - widgets
     post:
       operationId: createWidget
-      description: ''
+      summary: 'Create a new widget'
       parameters: []
       requestBody:
         content:
@@ -857,7 +872,7 @@ paths:
   /widgets/{id}/:
     delete:
       operationId: destroyWidget
-      summary: ''
+      summary: 'Delete a widget'
       parameters:
       - name: id
         in: path
