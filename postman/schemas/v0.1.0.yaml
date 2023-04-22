@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  title: 'petPal API'
+  title: 'ZenPet API'
   description: 'REST API that provides access to resources for the petPal Django web app.'
   version: '0.1.0'
 servers:
