@@ -1,6 +1,6 @@
 openapi: 3.0.2
 info:
-  title: 'petPal API'
+  title: 'ZenPet API'
   description: 'REST API that provides access to resources for the petPal Django web app.'
   version: '0.1.0'
 servers:
@@ -798,7 +798,7 @@ paths:
   /auth/login/:
     post:
       operationId: createMyTokenObtainPair
-      description: ''
+      summary: 'Get JWT Token Pair'
       parameters: []
       requestBody:
         content:
@@ -817,10 +817,9 @@ paths:
   /auth/login/refresh/:
     post:
       operationId: createTokenRefresh
+      summary: 'Refresh access token'
       description: 'Takes a refresh type JSON web token and returns an access type
-        JSON web
-
-        token if the refresh token is valid.'
+        JSON web token if the refresh token is valid.'
       parameters: []
       requestBody:
         content:
@@ -839,7 +838,7 @@ paths:
   /auth/register/:
     post:
       operationId: createUser
-      description: ''
+      summary: 'Create new user'
       parameters: []
       requestBody:
         content:
@@ -858,7 +857,7 @@ paths:
   /widgets/{id}/:
     delete:
       operationId: destroyWidget
-      description: ''
+      summary: ''
       parameters:
       - name: id
         in: path
